@@ -1,13 +1,17 @@
 import "./App.css";
 import { ProSidebarProvider } from "react-pro-sidebar";
-import { HomePage } from "./pages";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HomePage, SearchPage } from "./pages";
 
 function App() {
   return (
     <ProSidebarProvider>
-      <div className="App">
-        <HomePage />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<HomePage />} />
+          <Route path="/search" exact element={<SearchPage />} />
+        </Routes>
+      </Router>
     </ProSidebarProvider>
   );
 }

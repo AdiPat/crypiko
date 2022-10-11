@@ -6,10 +6,15 @@ import {
   FaRegGem,
   FaAngleRight,
   FaMoneyBillWave,
+  FaHome,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function SidebarLayout({ children }) {
   const { collapseSidebar } = useProSidebar();
+  const navigate = useNavigate();
+
+  const handleMenuItemClick = (path) => () => navigate(path);
 
   return (
     <div
@@ -31,8 +36,16 @@ function SidebarLayout({ children }) {
         </div>
         <Menu>
           <MenuItem
+            icon={<FaHome color="black" />}
+            suffix={<FaAngleRight color="black" />}
+            onClick={handleMenuItemClick("/")}
+          >
+            Home
+          </MenuItem>
+          <MenuItem
             icon={<FaSearch color="black" />}
             suffix={<FaAngleRight color="black" />}
+            onClick={handleMenuItemClick("/search")}
           >
             Search
           </MenuItem>
