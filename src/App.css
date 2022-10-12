@@ -2,3 +2,22 @@
 .menu-item {
   text-align: left;
 }
+
+.sidebar-container {
+  width: 100%;
+  
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.search-infograph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}

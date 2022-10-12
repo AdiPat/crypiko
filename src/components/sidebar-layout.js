@@ -29,6 +29,7 @@ function SidebarLayout({ children }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            padding: "1rem",
           }}
         >
           <h4 style={{ marginRight: "1rem" }}>Cryptiko</h4>
@@ -69,7 +70,7 @@ function SidebarLayout({ children }) {
           </MenuItem>
         </Menu>
       </Sidebar>
-      <div>{children}</div>
+      <div className="sidebar-container">{children}</div>
     </div>
   );
 }
