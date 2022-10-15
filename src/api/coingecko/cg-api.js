@@ -8,7 +8,13 @@ class _CgApi {
 
   async search({ query }) {
     const url = this.endpoints.SEARCH({ query });
-    const results = await axios.get(url);
+    const results = await axios
+      .get(url)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.error("Failed to get search results", err);
+        return [];
+      });
     return results;
   }
 }
