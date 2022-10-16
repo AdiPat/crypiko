@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { CgApi } from "../api/coingecko";
-import { SidebarLayout } from "../components";
+import { CoinsList, SidebarLayout } from "../components";
 import { COINS_PAGE_SIZE } from "../utils/constants";
 import ReactPaginate from "react-paginate";
 
 function CoinsPage() {
   const [pageCount, setPageCount] = useState(0);
+  const [pageOffset, setPageOffset] = useState(1);
+  const [coins, setCoins] = useState([]);
 
   useEffect(() => {
     CgApi.coinsList().then((coinsList) => {
@@ -15,12 +17,26 @@ function CoinsPage() {
     });
   }, []);
 
+  useEffect(() => {
+    CgApi.coinsMarkets({ page: pageOffset, pageSize: COINS_PAGE_SIZE }).then(
+      (coins) => {
+        console.log({ pageOffset, coins });
+        setCoins(coins);
+      }
+    );
+  }, [pageOffset]);
+
+  const handlePageChange = (event) => {
+    setPageOffset(event.selected);
+  };
+
   return (
     <SidebarLayout>
       <div className="coins-page">
         <h1>Coins</h1>
         <p>Explore different coins. </p>
         <hr />
+        <CoinsList coins={coins} isLoading={false} />
         <ReactPaginate
           previousLabel="Previous"
           nextLabel="Next"
@@ -36,10 +52,10 @@ function CoinsPage() {
           pageCount={pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          //onPageChange={handlePageChange}
+          onPageChange={handlePageChange}
           containerClassName="pagination"
           activeClassName="active"
-          //forcePage={pageOffset}
+          forcePage={pageOffset}
         />
       </div>
     </SidebarLayout>

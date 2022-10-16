@@ -1,5 +1,6 @@
 import { Accordion, Badge } from "react-bootstrap";
 import CoinsSearchResults from "./coins-search-results";
+import NFTSearchResults from "./nft-search-results";
 
 function SearchResults({ results }) {
   const { coins, categories, nfts, exchanges } = results ?? {};
@@ -27,8 +28,7 @@ function SearchResults({ results }) {
             </Badge>
           </Accordion.Header>
           <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <NFTSearchResults nfts={nfts} />
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">
