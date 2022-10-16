@@ -12,7 +12,10 @@ function SearchResults({ results }) {
   // TODO: add pagination to show all results
   coins = coins?.slice(0, Math.min(MAX_SEARCH_ITEMS, coins?.length));
   nfts = nfts?.slice(0, Math.min(MAX_SEARCH_ITEMS, nfts?.length));
-  coins = exchanges?.slice(0, Math.min(MAX_SEARCH_ITEMS, exchanges?.length));
+  exchanges = exchanges?.slice(
+    0,
+    Math.min(MAX_SEARCH_ITEMS, exchanges?.length)
+  );
 
   return (
     shouldRenderComponent && (

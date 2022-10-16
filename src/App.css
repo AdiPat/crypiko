@@ -26,6 +26,12 @@
   max-width: 100%;
 }
 
+.search-results-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-results {
   display: flex;
   list-style: none;
