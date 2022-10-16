@@ -118,3 +118,18 @@
   font-weight: 700;
 }
 
+.coin-info-container {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.coin-info-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coin-info-stats {
+  padding: 4rem;
+}

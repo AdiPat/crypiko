@@ -41,6 +41,18 @@ class _CgApi {
       });
     return results;
   }
+
+  async coinById({ coinId }) {
+    const url = this.endpoints.COIN_BY_ID({ id: coinId });
+    const result = await axios
+      .get(url)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.error("Failed to get coins markets. ", err);
+        return null;
+      });
+    return result;
+  }
 }
 
 const CgApi = new _CgApi({ endpoints: ENDPOINTS });

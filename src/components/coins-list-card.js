@@ -1,6 +1,9 @@
 import { Spinner, Card, Badge, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function CoinsListCard({ coin }) {
+  const navigate = useNavigate();
+
   const {
     id,
     symbol,
@@ -28,7 +31,11 @@ function CoinsListCard({ coin }) {
               <h6 className="coins-list-info-text">
                 Market Cap Rank: <span>{market_cap_rank}</span>
               </h6>
-              <Button className="my-4" variant="primary">
+              <Button
+                onClick={() => navigate(`/coins/${id}`)}
+                className="my-4"
+                variant="primary"
+              >
                 Know More
               </Button>
             </div>
