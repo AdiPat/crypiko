@@ -17,6 +17,18 @@ class _CgApi {
       });
     return results;
   }
+
+  async coinsList() {
+    const url = this.endpoints.COINS_LIST();
+    const results = await axios
+      .get(url)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.error("Failed to get coins list. ", err);
+        return [];
+      });
+    return results;
+  }
 }
 
 const CgApi = new _CgApi({ endpoints: ENDPOINTS });
