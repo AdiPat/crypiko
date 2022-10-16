@@ -21,3 +21,63 @@
   align-items: center;
   height: 50vh;
 }
+
+.search-results-container {
+  max-width: 100%;
+}
+
+.coin-search-results {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.coin-search-result {
+  display: inline-flex;
+  align-items: center;
+  flex: 30%;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  min-height: 150px;
+  max-height: 150px;
+  max-width: 30%;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.coin-search-result:hover {
+  transform: scale(1.05);
+  -webkit-box-shadow: 11px 13px 19px -5px rgba(173,173,173,1);
+  -moz-box-shadow: 11px 13px 19px -5px rgba(173,173,173,1);
+  box-shadow: 11px 13px 19px -5px rgba(173,173,173,1);
+  background-color: #f2f2f2;
+}
+
+.coin-mkt-cap-rank {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: darkgray;
+ 
+}
+
+.coin-search-result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-search-result-info-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coin-search-result-info-2  {
+  display: flex;
+  align-items: center;
+}
+

@@ -1,4 +1,4 @@
-import { SidebarLayout } from "../components";
+import { SearchResults, SidebarLayout } from "../components";
 import { InputGroup, Form, Alert, Button } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { ReactComponent as EyeViewSvg } from "../assets/eye-view.svg";
@@ -45,7 +45,7 @@ function SearchPage() {
             ></Form.Control>
             <Button
               onClick={handleOnSubmit}
-              variant="dark"
+              variant="primary"
               size="lg"
               type="submit"
             >
@@ -61,6 +61,7 @@ function SearchPage() {
               <EyeViewSvg style={{ height: 200, width: 200 }} />
             </div>
           )}
+          <SearchResults results={searchResults} />
         </div>
       </SidebarLayout>
     </>
