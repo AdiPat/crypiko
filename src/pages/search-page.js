@@ -4,8 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { ReactComponent as EyeViewSvg } from "../assets/eye-view.svg";
 import { useState } from "react";
 import { CgApi } from "../api/coingecko";
-
-const ENTER_KEYCODE = 13;
+import { ENTER_KEYCODE } from "../utils/constants";
 
 function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("");
