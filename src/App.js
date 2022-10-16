@@ -1,7 +1,7 @@
 import "./App.css";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { CoinsPage, HomePage, SearchPage } from "./pages";
+import { CoinInfoPage, CoinsPage, HomePage, SearchPage } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
           <Route path="/" exact element={<HomePage />} />
           <Route path="/search" exact element={<SearchPage />} />
           <Route path="/coins" exact element={<CoinsPage />} />
+          <Route path="/coins/:coinId" element={<CoinInfoPage />} />
         </Routes>
       </Router>
     </ProSidebarProvider>
