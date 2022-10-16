@@ -3,7 +3,7 @@ import { Badge, Image, Card } from "react-bootstrap";
 function CoinsSearchResults({ coins }) {
   return (
     <div className="search-results-container">
-      <ul className="coin-search-results">
+      <ul className="search-results">
         {coins.map((coin) => {
           const { id, name, symbol, thumb, large, market_cap_rank } = coin;
           return (

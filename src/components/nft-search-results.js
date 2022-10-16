@@ -2,7 +2,7 @@ import NFTSearchResult from "./nft-search-result";
 
 function NFTSearchResults({ nfts }) {
   return (
-    <ul className="coin-search-results">
+    <ul className="search-results">
       {nfts?.map((nft) => (
         <NFTSearchResult nft={nft} />
       ))}

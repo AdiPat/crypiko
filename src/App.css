@@ -26,7 +26,7 @@
   max-width: 100%;
 }
 
-.coin-search-results {
+.search-results {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
