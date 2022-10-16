@@ -53,6 +53,7 @@ function SidebarLayout({ children }) {
           <MenuItem
             icon={<FaBitcoin color="black" />}
             suffix={<FaAngleRight color="black" />}
+            onClick={handleMenuItemClick("/coins")}
           >
             Coins
           </MenuItem>
