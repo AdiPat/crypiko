@@ -1,3 +1,4 @@
 const ENTER_KEYCODE = 13;
+const COINS_PAGE_SIZE = 20;
 
-export { ENTER_KEYCODE };
+export { ENTER_KEYCODE, COINS_PAGE_SIZE };
